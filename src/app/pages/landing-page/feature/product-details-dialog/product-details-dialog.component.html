@@ -1,0 +1,14 @@
+<div class="image-wrapper">
+  <img [src]="product.imageUrl" />
+</div>
+<div class="details">
+  <h1>{{ product.title }}</h1>
+  @if (product.description) {
+  <p>{{ product.description }}</p>
+  }
+  <p><b>Preț</b>: {{ product.price * amount }} LEI</p>
+  <div class="actions">
+    <app-amount [(amount)]="amount" />
+    <button class="button" (click)="onAddToCart()">Adaugă în coș</button>
+  </div>
+</div>

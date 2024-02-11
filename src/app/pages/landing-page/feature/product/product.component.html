@@ -1,0 +1,27 @@
+<article>
+  <div class="image-wrapper">
+    <img [src]="product.imageUrl" />
+  </div>
+  <div class="details">
+    <section class="header">
+      <span class="title">{{ product.title }}</span>
+      <mat-icon
+        class="info"
+        (click)="onOpenDetails(product)"
+        matTooltip="Vezi detalii"
+        >info</mat-icon
+      >
+    </section>
+    <section class="actions">
+      <app-amount [(amount)]="amount" />
+      <div class="add-to-cart">
+        <span
+          ><b>{{ product.price * amount }}</b> LEI</span
+        >
+        <button class="button" (click)="onAddToCart(product)">
+          Adaugă în coș
+        </button>
+      </div>
+    </section>
+  </div>
+</article>

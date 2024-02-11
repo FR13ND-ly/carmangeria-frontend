@@ -1,0 +1,16 @@
+<img [src]="product.imageUrl" />
+<div class="details">
+  <h2>
+    {{ product.title }} |
+    <span class="product-price">{{ product.price }} LEI</span>
+  </h2>
+  <p>{{ product.description }}</p>
+</div>
+<div class="price">
+  <app-amount
+    [(amount)]="product.amount"
+    (amountChange)="onChangeAmount(product)"
+  />
+  <b>{{ product.price * product.amount }} LEI</b>
+</div>
+<span class="delete" (click)="onDeleteProduct()">Elimină</span>

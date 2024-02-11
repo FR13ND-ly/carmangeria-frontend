@@ -1,0 +1,28 @@
+<h2>{{ section.name }} ({{ section.products.length }})</h2>
+<div class="products-wrapper">
+  @for (product of section.products; track product.id;) {
+  <article>
+    <div class="image-wrapper">
+      <img [src]="product.imageUrl" />
+    </div>
+    <div class="details">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      <b>{{ product.type }}</b>
+      <p>
+        <b>{{ product.price }}</b> LEI
+      </p>
+    </div>
+    <div class="actions">
+      <button mat-icon-button (click)="onEdit(product)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="onDelete(product.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </article>
+  @if (!$last) {
+  <div class="divider"></div>
+  } }
+</div>

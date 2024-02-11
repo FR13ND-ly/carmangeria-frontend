@@ -1,0 +1,61 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95) 0,
+    rgba(0, 0, 0, 0.59) 100%
+  );
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  z-index: 99;
+}
+
+mat-icon {
+  cursor: pointer;
+  position: relative;
+  scale: 1.1;
+}
+
+.title {
+  color: #fff;
+  cursor: pointer;
+  img {
+    height: 60px;
+    width: auto;
+    padding-block: 0.5rem;
+    @media (max-width: 801px) {
+      height: 40px;
+    }
+  }
+}
+
+[data-badge]::after {
+  display: grid;
+  place-items: center;
+  content: attr(data-badge);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 4px;
+  right: 5px;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  font-weight: bolder;
+  background-color: var(--primary-color);
+}
+
+[data-badge="0"]::after {
+  display: none;
+}
+
+mat-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

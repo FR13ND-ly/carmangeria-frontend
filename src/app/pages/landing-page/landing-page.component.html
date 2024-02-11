@@ -1,0 +1,6 @@
+<hero />
+<div class="products">
+  @for (section of (products$ | async); track $index) {
+  <products-section [section]="section" />
+  }
+</div>

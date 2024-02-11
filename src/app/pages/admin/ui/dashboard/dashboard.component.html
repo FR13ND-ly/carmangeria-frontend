@@ -1,0 +1,36 @@
+<div class="admin-header">
+  <h1>Meniul Principal</h1>
+</div>
+@if (dashboard$ | async; as dashboard) {
+<div class="content">
+  <div class="wrapper">
+    <article routerLink="/admin/products">
+      <mat-icon>store_front</mat-icon>
+      <section>
+        <h2>Produse</h2>
+        <span>{{ dashboard.productsCount }} produs(e)</span>
+      </section>
+    </article>
+    <article routerLink="/admin/orders">
+      <mat-icon>sell</mat-icon>
+      <section>
+        <h2>Comenzi</h2>
+        <span
+          >{{ dashboard.ordersCount }}
+          {{ dashboard.ordersCount == 1 ? "comandă" : "comenzi" }}</span
+        >
+      </section>
+    </article>
+  </div>
+  <form class="email" (submit)="onSetEmail(dashboard.email)">
+    <h3>Notificări pe email:</h3>
+    <input
+      placeholder="Email"
+      type="email"
+      [(ngModel)]="dashboard.email"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <button class="button">Modifică poșta</button>
+  </form>
+</div>
+}

@@ -1,0 +1,9 @@
+@if (orders$ | async; as orders) {
+<div class="admin-header">
+  <h1>Comenzi ({{ orders.length }})</h1>
+</div>
+<div class="wrapper">
+  @for(order of orders; track order.id) {
+  <order [order]="order" (action)="onAction(orders, $index)" />}
+</div>
+}

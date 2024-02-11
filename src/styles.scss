@@ -1,0 +1,99 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$frontend-primary: mat.define-palette(mat.$amber-palette, 800);
+$frontend-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+
+$frontend-warn: mat.define-palette(mat.$red-palette);
+
+$frontend-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $frontend-primary,
+      accent: $frontend-accent,
+      warn: $frontend-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($frontend-theme);
+
+html,
+body {
+  min-height: 100vh;
+  scrollbar-gutter: stable;
+}
+body {
+  margin: 0;
+  background-color: #1b1a1b;
+  color: #fff;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.backdrop {
+  background-color: hsl(0, 0%, 0%, 0.9);
+}
+
+:root {
+  --primary-color: #f9a825;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #bfbfbf;
+  outline: 0;
+  font-size: 16px;
+  width: 100%;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 3px;
+  position: relative;
+  background-color: transparent;
+  font-family: "Roboto";
+  transition: 0.2s;
+  &:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+select option {
+  background-color: #303030;
+  padding-block: 0.5rem;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  background-color: #333333;
+  // border-radius: 6px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+  color: #fff;
+  transition: background-color 0.2s;
+  width: fit-content;
+  &:hover {
+    background-color: var(--primary-color);
+  }
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #3d3d3d;
+  margin-bottom: 2rem;
+  @media (max-width: 801px) {
+    width: calc(100% - 1rem);
+    margin-bottom: 1rem;
+  }
+}

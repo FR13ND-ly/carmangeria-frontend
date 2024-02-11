@@ -1,0 +1,11 @@
+<h1>{{ product.new ? "Adaugă produs" : "Editează produsul" }}</h1>
+<input placeholder="Titlu" [(ngModel)]="product.title" />
+<textarea placeholder="Descriere" [(ngModel)]="product.description"></textarea>
+<input type="number" placeholder="Preț(LEI)" [(ngModel)]="product.price" />
+<select [(ngModel)]="product.type">
+  <option value="Produse afumate">Produse afumate</option>
+  <option value="Produse proaspete">Produse proaspete</option>
+  <option value="Platouri">Platouri</option>
+</select>
+<input type="file" (input)="onUploadFile($event)" />
+<button class="button" (click)="onFinish()">Salvează</button>

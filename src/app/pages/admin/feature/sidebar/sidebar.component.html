@@ -1,0 +1,39 @@
+<div>
+  <div
+    class="item"
+    routerLinkActive="item--activated"
+    routerLink="/admin/"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-icon>dashboard</mat-icon>
+    <span>Meniu principal</span>
+  </div>
+  <div
+    class="item"
+    routerLinkActive="item--activated"
+    routerLink="/admin/products"
+  >
+    <mat-icon>restaurant_menu</mat-icon>
+    <span>Produse</span>
+  </div>
+  <div
+    class="item"
+    routerLinkActive="item--activated"
+    routerLink="/admin/orders"
+  >
+    <mat-icon>receipt_log</mat-icon>
+    <span>Comenzi</span>
+  </div>
+  <div
+    class="item statistics"
+    routerLinkActive="item--activated"
+    routerLink="/admin/statistics"
+  >
+    <mat-icon>analytics</mat-icon>
+    <span>Statistică</span>
+  </div>
+  <div class="item logout" (click)="onLogout()">
+    <mat-icon>logout</mat-icon>
+    <span>Deloghează-te</span>
+  </div>
+</div>

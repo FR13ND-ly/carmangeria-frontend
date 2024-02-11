@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+  @media (max-width: 801px) {
+    margin-bottom: 4rem;
+  }
+}
+
+mat-icon {
+  scale: 8;
+  margin-bottom: 6rem;
+  @media (max-width: 801px) {
+    scale: 6;
+    margin-bottom: 4rem;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 3rem;
+}

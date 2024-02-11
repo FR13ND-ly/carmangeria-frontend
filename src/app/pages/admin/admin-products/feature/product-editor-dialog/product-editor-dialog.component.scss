@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #1b1a1b;
+  width: 30rem;
+  gap: 1rem;
+  box-shadow: 0 0 30px 25px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  @media (max-width: 801px) {
+    width: 100%;
+  }
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 1rem;
+}

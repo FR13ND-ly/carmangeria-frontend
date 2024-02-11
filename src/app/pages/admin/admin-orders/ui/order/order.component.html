@@ -1,0 +1,40 @@
+<h2 class="title">Comanda #{{ order.id }}</h2>
+<span><b>Nume:</b> {{ order.name }}</span>
+<span><b>Telefon:</b> {{ order.phone }}</span>
+@if (order.email ) {<span><b>Email:</b> {{ order.email }}</span
+>} @if (order.message ) {<span><b>Mesaj:</b> {{ order.message }}</span
+>}
+<span
+  ><b>Data programării livrării :</b>
+  {{ order.deliveryDate | date : "shortDate" }}</span
+>
+<h3 class="products">
+  Produse ({{ order.products.length }}) |
+  <span class="price">{{ price }} LEI</span>
+</h3>
+<div class="products-wrapper">
+  @for (product of order.products; track product.id;) {
+  <article>
+    <div class="image-wrapper">
+      <img [src]="product.imageUrl" />
+    </div>
+    <div class="details">
+      <h3>
+        {{ product.title }} ({{ product.amount }}) |
+        <span class="price">{{ product.price * product.amount }} LEI</span>
+      </h3>
+      <p>{{ product.description }}</p>
+      <b>{{ product.type }}</b>
+      <p>
+        <b>{{ product.price }}</b> LEI
+      </p>
+    </div>
+  </article>
+  @if (!$last) {
+  <div class="divider"></div>
+  } }
+</div>
+<div class="actions">
+  <button (click)="onComplete(order.id)">Comandă finalizată</button>
+  <button (click)="onDelete(order.id)">Ștergeți</button>
+</div>

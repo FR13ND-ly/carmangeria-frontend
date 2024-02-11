@@ -1,0 +1,51 @@
+<div class="admin-header">
+  <h1>Statistică</h1>
+</div>
+<div class="content">
+  @if (statistics$ | async; as statistics) {
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titlu</th>
+        <th>Număr vânzăir</th>
+        <th>Preț total vânzări</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (productStats of (statistics.productsStats | keyvalue | sort:
+      'productsPrice' ); track $index) {
+      <tr>
+        <td>{{ productStats.key }}</td>
+        <td>{{ productStats.value.title }}</td>
+        <td>{{ productStats.value.productsNumber }}</td>
+        <td>{{ productStats.value.productsPrice }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Telefon</th>
+        <th>Nume</th>
+        <th>Email</th>
+        <th>Număr de produse cumpărate</th>
+        <th>Total cheltuit</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (userStats of statistics.usersStats| keyvalue | sort:
+      'productsPrice'; track $index) {
+      <tr>
+        <td>{{ userStats.key }}</td>
+        <td>{{ userStats.value.name }}</td>
+        <td>{{ userStats.value.email }}</td>
+        <td>{{ userStats.value.productsNumber }}</td>
+        <td>{{ userStats.value.productsPrice }} LEI</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>

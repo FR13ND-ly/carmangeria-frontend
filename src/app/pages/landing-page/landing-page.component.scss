@@ -1,0 +1,6 @@
+.products {
+  padding-inline: 10rem;
+  @media (max-width: 801px) {
+    padding-inline: 1rem;
+  }
+}

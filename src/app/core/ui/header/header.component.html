@@ -1,0 +1,16 @@
+<header>
+  <div class="title" routerLink="/">
+    <img src="/assets/sigla.jpg" />
+  </div>
+  <button
+    mat-icon-button
+    [attr.data-badge]="cartLength$ | async"
+    routerLink="/cart"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  @if (loading$ | async) {<mat-progress-bar
+    mode="indeterminate"
+  ></mat-progress-bar
+  >}
+</header>

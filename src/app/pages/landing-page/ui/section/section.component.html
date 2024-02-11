@@ -1,0 +1,6 @@
+<h1>{{ section.name }}</h1>
+<div class="products-wrapper">
+  @for (product of section.products; track product.id) {
+  <product [product]="product" />
+  }
+</div>

@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+  @media (max-width: 801px) {
+    padding: 0;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  &--activated {
+    background-color: #464646;
+  }
+  &:hover {
+    background-color: #383838;
+  }
+  &--activated:hover {
+    background-color: #535353;
+  }
+  @media (max-width: 801px) {
+    width: fit-content;
+    span {
+      display: none;
+    }
+  }
+}
+
+.statistics {
+  @media (max-width: 801px) {
+    display: none;
+  }
+}
+
+.logout {
+  border-top: 1px solid #ccc;
+  margin-top: 5rem;
+}

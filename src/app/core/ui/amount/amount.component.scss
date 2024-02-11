@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid var(--primary-color);
+  height: fit-content;
+  overflow: hidden;
+  width: fit-content;
+}
+
+mat-icon {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  margin: 0;
+}

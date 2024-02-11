@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  outline: none;
+  @media (max-width: 801px) {
+    flex-direction: column;
+  }
+}
+
+h1 {
+  margin-block: 0.5;
+  padding-block: 0.5;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 4rem 2rem 3rem;
+  background-color: #1b1a1b;
+  width: 30rem;
+  height: fit-content;
+  box-shadow: 0 0 30px 25px rgba(0, 0, 0, 0.4);
+  @media (max-width: 801px) {
+    width: 100%;
+    padding: 2rem;
+    padding-top: 0;
+  }
+}
+
+p {
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

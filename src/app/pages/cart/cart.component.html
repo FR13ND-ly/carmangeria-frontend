@@ -1,0 +1,12 @@
+@if (step < 2) { @if (products$| async; as products) {
+<div class="cart">
+  @if (step == 0) {
+  <cart-products [products]="products" />
+  } @else if (step == 1) {
+  <cart-details [data]="cart.data" />
+  }
+  <cart-menu [products]="products" [(step)]="step" (finish)="onFinish()" />
+</div>
+} } @if (step == 2) {
+<cart-finished />
+}

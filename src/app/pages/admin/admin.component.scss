@@ -1,0 +1,14 @@
+:host {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: 20% auto;
+  @media (max-width: 801px) {
+    margin-top: 5rem;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+div {
+  width: 90%;
+}

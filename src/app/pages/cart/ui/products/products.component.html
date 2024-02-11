@@ -1,0 +1,8 @@
+<h1>{{ products.length }} Articol(e) din coș</h1>
+<div class="products-wrapper">
+  @for (product of products; track product.id) {
+  <cart-product [product]="product" />
+  @if (!$last) {
+  <div class="divider"></div>
+  } }
+</div>

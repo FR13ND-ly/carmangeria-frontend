@@ -1,0 +1,8 @@
+<div class="admin-header">
+  <h1>Produse</h1>
+  <button class="button" (click)="onAddProduct()">Adaugă un produs</button>
+</div>
+<div>
+  @for (section of (products$ | async); track $index) {
+  <products-section [section]="section" (action)="onAction()" />}
+</div>

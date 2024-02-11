@@ -1,0 +1,15 @@
+<form (submit)="onLogin()">
+  <h1>Conectează-te</h1>
+  <input
+    placeholder="Nume de utilizator"
+    [(ngModel)]="data.username"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <input
+    placeholder="Parola"
+    type="password"
+    [(ngModel)]="data.password"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <button>Autentificare</button>
+</form>

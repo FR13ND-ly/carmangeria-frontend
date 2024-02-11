@@ -1,0 +1,49 @@
+footer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #252525;
+  padding: 1rem 10rem;
+  box-sizing: border-box;
+  gap: 1rem;
+  @media (max-width: 801px) {
+    padding-inline: 2rem;
+  }
+}
+
+h1 {
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  font-size: 2.4rem;
+  @media (max-width: 801px) {
+    font-size: 2rem;
+  }
+}
+
+.facebook {
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 801px) {
+    flex-direction: column;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.copyright {
+  border-top: 2px solid #383838;
+  padding-top: 1rem;
+}

@@ -1,0 +1,12 @@
+<h1>Date de livrare</h1>
+<div class="wrapper">
+  <input placeholder="Nume și prenume" [(ngModel)]="data.name" />
+  <input type="tel" placeholder="Telefon" [(ngModel)]="data.phone" />
+  <input type="email" placeholder="Email(opțional)" [(ngModel)]="data.email" />
+  <b>Data de livrare:</b>
+  <input type="date" [(ngModel)]="data.deliveryDate" />
+  <textarea placeholder="Mesaj" [(ngModel)]="data.message"></textarea>
+  <mat-checkbox color="warn" [(ngModel)]="data.savePreferences"
+    >Salvează preferințele</mat-checkbox
+  >
+</div>
