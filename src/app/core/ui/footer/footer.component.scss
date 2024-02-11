@@ -20,11 +20,20 @@ h1 {
   }
 }
 
-.facebook {
-  color: #fff;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0;
+  a:hover {
+    filter: brightness(0.8);
+  }
+  img {
+    width: 35px;
+    height: 35px;
   }
 }
 

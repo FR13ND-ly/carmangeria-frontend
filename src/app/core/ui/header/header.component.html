@@ -2,11 +2,7 @@
   <div class="title" routerLink="/">
     <img src="/assets/sigla.jpg" />
   </div>
-  <button
-    mat-icon-button
-    [attr.data-badge]="cartLength$ | async"
-    routerLink="/cart"
-  >
+  <button mat-icon-button [attr.data-badge]="cartLength()" routerLink="/cart">
     <mat-icon>shopping_cart</mat-icon>
   </button>
   @if (loading$ | async) {<mat-progress-bar

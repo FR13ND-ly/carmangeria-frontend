@@ -1,9 +1,18 @@
-import { Component, inject } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  inject,
+  signal,
+} from '@angular/core';
 import { MaterialModule } from '../../feature/material/material.module';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../data-access/cart.service';
 import { AsyncPipe } from '@angular/common';
-import { filter, map, tap } from 'rxjs';
+import { filter, map, startWith, tap } from 'rxjs';
 import { LoadingService } from '../../data-access/loading.service';
 
 @Component({
@@ -13,10 +22,20 @@ import { LoadingService } from '../../data-access/loading.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   cartService = inject(CartService);
   loadingService = inject(LoadingService);
+  changes = inject(ChangeDetectorRef);
 
   loading$ = this.loadingService.loading$;
-  cartLength$ = this.cartService.cart$.pipe(map((cart: any) => cart.length));
+  cartLength = signal(0);
+
+  ngAfterViewInit(): void {
+    this.cartService.cart$
+      .pipe(map((cart: any) => cart.length))
+      .subscribe((res) => {
+        this.cartLength.set(res);
+        this.changes.detectChanges();
+      });
+  }
 }
