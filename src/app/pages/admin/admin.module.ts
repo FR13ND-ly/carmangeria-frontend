@@ -8,6 +8,7 @@ import { AdminStatisticsComponent } from './admin-statistics/admin-statistics.co
 import { authGuard } from '../../core/guards/auth.guard';
 import { loginGuard } from '../../core/guards/login.guard';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
+import { adminGuard } from '../../core/guards/admin.guard';
 
 @NgModule({
   declarations: [],
@@ -21,11 +22,13 @@ import { DashboardComponent } from './ui/dashboard/dashboard.component';
             path: '',
             component: DashboardComponent,
             title: "Meniu Principal | Carmangeria lui Geo'",
+            canActivate: [adminGuard],
           },
           {
             path: 'products',
             component: AdminProductsComponent,
             title: "Produse | Carmangeria lui Geo'",
+            canActivate: [adminGuard],
           },
           {
             path: 'orders',
@@ -36,6 +39,7 @@ import { DashboardComponent } from './ui/dashboard/dashboard.component';
             path: 'statistics',
             component: AdminStatisticsComponent,
             title: "Statistică | Carmangeria lui Geo'",
+            canActivate: [adminGuard],
           },
         ],
         canActivate: [authGuard],

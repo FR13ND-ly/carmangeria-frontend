@@ -15,10 +15,13 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: brightness(0.8) blur(0.3rem);
-  background-attachment: fixed;
+  filter: brightness(0.8) blur(0.1rem);
   background-image: url("/assets/hero.jpg");
   background-size: cover;
+  @media (min-width: 801px) {
+    background-attachment: fixed;
+    filter: brightness(0.8) blur(0.3rem);
+  }
 }
 
 .a {

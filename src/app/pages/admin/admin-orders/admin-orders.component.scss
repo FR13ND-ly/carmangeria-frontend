@@ -6,3 +6,27 @@
     width: calc(100% - 1rem);
   }
 }
+
+mat-checkbox {
+  color: #fff;
+}
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.date {
+  background-color: #2c2c2c;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 2px solid transparent;
+  &:hover {
+    background-color: #3f3f3f;
+  }
+  &--selected {
+    border: 2px solid #afafaf;
+  }
+}

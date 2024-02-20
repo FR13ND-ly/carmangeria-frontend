@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { map, of, tap } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
@@ -11,8 +11,9 @@ export class ProductsService {
   apiUrl = environment.apiUrl + 'api/';
 
   getAll() {
+    const cacheBuster = `?cacheBuster=${new Date().getTime()}`;
     return this.http
-      .get(this.apiUrl + 'products/get/all/')
+      .get(this.apiUrl + 'products/get/all/' + cacheBuster)
       .pipe(map((res: any) => this.groupBy(res, (el: any) => el.type)));
   }
 

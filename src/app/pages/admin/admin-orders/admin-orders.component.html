@@ -1,9 +1,30 @@
-@if (orders$ | async; as orders) {
+@if (orders$ | async;) {
 <div class="admin-header">
-  <h1>Comenzi ({{ orders.length }})</h1>
+  <h1>Comenzi ({{ unCompletedOrders.length }} nefinalizate)</h1>
+  <mat-checkbox #check (change)="showCompleted = check.checked"
+    >Comenzi finalizate</mat-checkbox
+  >
 </div>
+@if (showCompleted) {
 <div class="wrapper">
-  @for(order of orders; track order.id) {
-  <order [order]="order" (action)="onAction(orders, $index)" />}
+  @for(order of completedOrders; track order.id) {
+  <order [order]="order" (action)="onAction(completedOrders, $index)" />}
 </div>
-}
+} @else {
+<div class="wrapper">
+  <div class="dates">
+    @for (date of dates; track $index) {
+    <article
+      class="date"
+      [class.date--selected]="selectedDates.includes(date)"
+      (click)="onSelectDate(date)"
+    >
+      {{ date }}
+    </article>
+    }
+  </div>
+  @for(order of unCompletedOrders; track order.id) { @if
+  (selectedDates.includes(order.deliveryDate) || !selectedDates.length) {
+  <order [order]="order" (action)="onAction(unCompletedOrders, $index)" />} }
+</div>
+} }

@@ -22,15 +22,26 @@
       </section>
     </article>
   </div>
-  <form class="email" (submit)="onSetEmail(dashboard.email)">
-    <h3>Notificări pe email:</h3>
-    <input
-      placeholder="Email"
-      type="email"
-      [(ngModel)]="dashboard.email"
-      [ngModelOptions]="{ standalone: true }"
-    />
-    <button class="button">Modifică poșta</button>
-  </form>
+  <div class="wrapper">
+    <form class="email" (submit)="onSetEmail(dashboard.email)">
+      <h3>Email-ul care va primi comenzile:</h3>
+      <input
+        placeholder="Email"
+        type="email"
+        [(ngModel)]="dashboard.email"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <button class="button">Modifică poșta</button>
+    </form>
+    <form class="email" (submit)="onSetNews(dashboard.news)">
+      <h3>Noutăți:</h3>
+      <textarea
+        placeholder="Noutăți"
+        [(ngModel)]="dashboard.news"
+        [ngModelOptions]="{ standalone: true }"
+      ></textarea>
+      <button class="button">Modificați</button>
+    </form>
+  </div>
 </div>
 }

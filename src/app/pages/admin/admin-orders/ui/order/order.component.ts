@@ -7,7 +7,6 @@ import {
   Output,
   inject,
 } from '@angular/core';
-import { CartService } from '../../../../../core/data-access/cart.service';
 import { OrdersService } from '../../../../../core/data-access/orders.service';
 
 @Component({

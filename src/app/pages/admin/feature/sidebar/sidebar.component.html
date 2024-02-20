@@ -1,8 +1,10 @@
+@if ({isAdmin: isAdmin$ | async}; as vs) {
 <div>
   <div
     class="item"
     routerLinkActive="item--activated"
     routerLink="/admin/"
+    [class.hide]="!vs.isAdmin"
     [routerLinkActiveOptions]="{ exact: true }"
   >
     <mat-icon>dashboard</mat-icon>
@@ -12,6 +14,7 @@
     class="item"
     routerLinkActive="item--activated"
     routerLink="/admin/products"
+    [class.hide]="!vs.isAdmin"
   >
     <mat-icon>restaurant_menu</mat-icon>
     <span>Produse</span>
@@ -28,6 +31,7 @@
     class="item statistics"
     routerLinkActive="item--activated"
     routerLink="/admin/statistics"
+    [class.hide]="!vs.isAdmin"
   >
     <mat-icon>analytics</mat-icon>
     <span>Statistică</span>
@@ -37,3 +41,4 @@
     <span>Deloghează-te</span>
   </div>
 </div>
+}

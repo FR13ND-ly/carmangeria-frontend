@@ -37,6 +37,20 @@ h2 {
   }
 }
 
+.description {
+  max-width: 60vw;
+  line-height: 1.6;
+  @media (max-width: 801px) {
+    max-width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
 .details {
   display: flex;
   justify-content: space-between;

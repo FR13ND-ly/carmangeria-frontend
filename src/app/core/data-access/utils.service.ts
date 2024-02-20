@@ -20,4 +20,12 @@ export class UtilsService {
   getStatistics() {
     return this.http.get(`${this.apiUrl}statistics/`);
   }
+
+  getNews() {
+    return this.http.get(`${this.apiUrl}news/get/`);
+  }
+
+  setNews(text: string) {
+    return this.http.get(`${this.apiUrl}news/set/${text}/`);
+  }
 }

@@ -35,6 +35,8 @@
   } }
 </div>
 <div class="actions">
+  @if (!order.completed) {
   <button (click)="onComplete(order.id)">Comandă finalizată</button>
+  }
   <button (click)="onDelete(order.id)">Ștergeți</button>
 </div>

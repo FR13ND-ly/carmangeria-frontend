@@ -6,7 +6,7 @@ $frontend-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
 
 $frontend-warn: mat.define-palette(mat.$red-palette);
 
-$frontend-theme: mat.define-light-theme(
+$frontend-theme: mat.define-dark-theme(
   (
     color: (
       primary: $frontend-primary,
@@ -96,4 +96,8 @@ textarea {
     width: calc(100% - 1rem);
     margin-bottom: 1rem;
   }
+}
+
+.cdk-dialog-container {
+  outline: none;
 }

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MaterialModule } from '../../../../core/feature/material/material.module';
 import { UtilsService } from '../../../../core/data-access/utils.service';
 import { AsyncPipe } from '@angular/common';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -23,6 +23,12 @@ export class DashboardComponent {
   onSetEmail(email: string) {
     this.utilsService.setEmail(email).subscribe(() => {
       this.snackbar.open('Email-ul a fost modificat', '', { duration: 5000 });
+    });
+  }
+
+  onSetNews(text: string) {
+    this.utilsService.setNews(text).subscribe(() => {
+      this.snackbar.open('Noutățile au fost modificat', '', { duration: 5000 });
     });
   }
 }

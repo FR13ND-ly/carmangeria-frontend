@@ -1,6 +1,5 @@
 <h2>Finalizează comanda</h2>
 <div class="divider"></div>
-<p>* comanda minimã - <b>150 lei</b>.</p>
 <p>
   <b>LIVRARE</b>: zilnic de marti pana sambata in localitatile: Nisiporesti,
   Barticesti, Iugani, Gheraesti, Mircesti. miercuri: pe traseul Hanul Ancutei -
@@ -13,7 +12,7 @@
 <div class="divider"></div>
 <p><b>Număr produse:</b> {{ productsCount }}</p>
 <p><b>Total:</b> {{ price }} LEI</p>
-<button class="next" (click)="onNext()" [disabled]="price < 150">
+<button class="next" (click)="onNext()" [disabled]="productsCount < 1">
   {{ step ? "Comandă" : "Continuă" }}
 </button>
 @if (step > 0) { <span class="back" (click)="onBack()">Întoarce-te</span> }
