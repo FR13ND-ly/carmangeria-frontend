@@ -11,6 +11,12 @@
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
   }
+  @media (max-width: 1441px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 2560px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 h1 {
