@@ -6,15 +6,15 @@
 .products-wrapper {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  @media (max-width: 801px) {
-    grid-template-columns: 1fr;
-  }
-  @media (max-width: 1441px) {
+  grid-template-columns: 1fr;
+  @media (min-width: 801px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @media (min-width: 2560px) {
+  @media (min-width: 1441px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1921px) {
     grid-template-columns: repeat(5, 1fr);
   }
 }

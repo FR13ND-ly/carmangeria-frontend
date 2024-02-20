@@ -28,46 +28,48 @@
 .a {
   position: absolute;
   right: 10rem;
-  width: 400px;
   height: auto;
   box-shadow: 0 0 30px 25px rgba(0, 0, 0, 0.4);
-  @media (max-width: 801px) {
-    display: none;
-  }
-  @media (max-width: 1441px) {
+  display: none;
+  @media (min-width: 801px) {
+    display: block;
     width: 300px;
     right: 5rem;
+  }
+  @media (min-width: 1441px) {
+    width: 400px;
+    right: 10rem;
   }
 }
 
 .description {
   position: absolute;
-  left: 10rem;
   background-color: hsl(0, 0%, 0%, 0.7);
-  padding: 2rem 4rem;
   box-sizing: border-box;
-  width: 48%;
-  @media (max-width: 801px) {
-    padding: 1rem 2rem;
-    left: 1rem;
-    width: 90%;
-  }
-  @media (max-width: 1441px) {
+  padding: 1rem 2rem;
+  left: 1rem;
+  width: 90%;
+  @media (min-width: 801px) {
     padding: 1rem 2rem;
     left: 4rem;
+  }
+  @media (min-width: 1441px) {
+    left: 10rem;
+    padding: 2rem 4rem;
+    width: 48%;
   }
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   width: fit-content;
   margin-block: 0.3rem;
   padding-block: 0.5rem;
-  @media (max-width: 801px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 1441px) {
+  @media (min-width: 801px) {
     font-size: 3rem;
+  }
+  @media (min-width: 1441px) {
+    font-size: 4rem;
   }
 }
 
