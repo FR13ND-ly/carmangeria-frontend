@@ -4,6 +4,8 @@
   height: 70vh;
   position: relative;
   align-items: center;
+  padding-top: 96px;
+  box-sizing: border-box;
   @media (max-width: 801px) {
     height: 50vh;
   }
