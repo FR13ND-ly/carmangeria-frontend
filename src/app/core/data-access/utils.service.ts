@@ -22,7 +22,8 @@ export class UtilsService {
   }
 
   getNews() {
-    return this.http.get(`${this.apiUrl}news/get/`);
+    const cacheBuster = `?cacheBuster=${new Date().getTime()}`;
+    return this.http.get(`${this.apiUrl}news/get/${cacheBuster}`);
   }
 
   setNews(text: string) {
