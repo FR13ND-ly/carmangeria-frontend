@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://stingray-app-7bc69.ondigitalocean.app/api/',
+  apiUrl: 'https://sea-lion-app-kexjh.ondigitalocean.app/api/',
 };
