@@ -7,13 +7,19 @@
 @if (showCompleted) {
 <div class="wrapper">
   @for(order of completedOrders; track order.id) {
-  <order [order]="order" (action)="onAction(completedOrders, $index)" />}
+  <order [order]="order" (action)="onAction(completedOrders, $index)" />}@empty
+  {
+  <h3>Nu sunt comenzi</h3>
+  }
 </div>
 } @else {
 <div class="wrapper">
   @for(order of unCompletedOrders; track order.id) {
   <order [order]="order" (action)="onAction(unCompletedOrders, $index)" />}
-  <div class="statistics" *ngIf="unCompletedOrders">
+  @empty {
+  <h3>Nu sunt comenzi</h3>
+  }
+  <div class="statistics" *ngIf="unCompletedOrders.length">
     <mat-form-field>
       <mat-label>Introdu un interval</mat-label>
       <mat-date-range-input [rangePicker]="picker" [formGroup]="interval">

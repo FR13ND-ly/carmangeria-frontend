@@ -9,7 +9,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { SortPipe } from '../../../core/pipes/sort.pipe';
-import { NgIf } from '@angular/common';
+import { JsonPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-admin-orders',
@@ -20,6 +20,7 @@ import { NgIf } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     SortPipe,
+    JsonPipe,
     NgIf,
   ],
   templateUrl: './admin-orders.component.html',
