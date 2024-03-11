@@ -3,7 +3,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { CartComponent } from './pages/cart/cart.component';
 
 export const routes: Routes = [
-  { path: '', component: LandingPageComponent },
+  { path: '', component: LandingPageComponent, title: 'Carmangeria lui Geo' },
   {
     path: 'cart',
     component: CartComponent,
@@ -13,6 +13,7 @@ export const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./pages/admin/admin.module').then((m) => m.AdminModule),
+    title: 'Administrare | Carmangeria lui Geo',
   },
   { path: '**', redirectTo: '' },
 ];

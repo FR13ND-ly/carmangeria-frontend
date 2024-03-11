@@ -1,8 +1,24 @@
 <div class="admin-header">
   <h1>Statistică</h1>
 </div>
+<mat-form-field>
+  <mat-label>Introdu un interval</mat-label>
+  <mat-date-range-input [rangePicker]="picker" [formGroup]="interval">
+    <input matStartDate formControlName="start" />
+    <input matEndDate formControlName="end" />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+<button
+  mat-icon-button
+  class="clear"
+  (click)="clear()"
+  matTooltip="Resetează intervalul"
+>
+  <mat-icon>close</mat-icon>
+</button>
 <div class="content">
-  @if (statistics$ | async; as statistics) {
   <table class="table table-striped">
     <thead>
       <tr>
@@ -13,15 +29,26 @@
       </tr>
     </thead>
     <tbody>
-      @for (productStats of (statistics.productsStats | keyvalue | sort:
-      'productsPrice' ); track $index) {
+      @for (productStats of (productsStats | sort : "price" ); track
+      productStats.id) {
       <tr>
-        <td>{{ productStats.key }}</td>
-        <td>{{ productStats.value.title }}</td>
-        <td>{{ productStats.value.productsNumber }}</td>
-        <td>{{ productStats.value.productsPrice }}</td>
+        <td>{{ productStats.id }}</td>
+        <td>{{ productStats.title }}</td>
+        <td>
+          {{ productStats.amount }} @if (productStats.orders) { ({{
+            productStats.orders
+          }}
+          comenzi) }
+        </td>
+        <td>{{ productStats.price }} LEI</td>
       </tr>
       }
+      <tr class="total">
+        <td>Total:</td>
+        <td></td>
+        <td>{{ productsStats | sum : "amount" }}</td>
+        <td>{{ productsStats | sum : "price" }}</td>
+      </tr>
     </tbody>
   </table>
   <table class="table table-striped">
@@ -35,17 +62,20 @@
       </tr>
     </thead>
     <tbody>
-      @for (userStats of statistics.usersStats| keyvalue | sort:
-      'productsPrice'; track $index) {
+      @for (userStats of (usersStats); track $index) {
       <tr>
-        <td>{{ userStats.key }}</td>
-        <td>{{ userStats.value.name }}</td>
-        <td>{{ userStats.value.email }}</td>
-        <td>{{ userStats.value.productsNumber }}</td>
-        <td>{{ userStats.value.productsPrice }} LEI</td>
+        <td>{{ userStats.id }}</td>
+        <td>{{ userStats.name }}</td>
+        <td>{{ userStats.email }}</td>
+        <td>
+          {{ userStats.amount }} @if (userStats.orders) { ({{
+            userStats.orders
+          }}
+          comenzi) }
+        </td>
+        <td>{{ userStats.price }} LEI</td>
       </tr>
       }
     </tbody>
   </table>
-  }
 </div>

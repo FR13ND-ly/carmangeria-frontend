@@ -10,6 +10,7 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -23,7 +24,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, inMemoryScrollingFeature),
     provideClientHydration(),
-    importProvidersFrom([BrowserAnimationsModule]),
+    importProvidersFrom([BrowserAnimationsModule, MatNativeDateModule]),
     provideHttpClient(withFetch()),
   ],
 };

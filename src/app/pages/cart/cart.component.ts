@@ -62,10 +62,26 @@ export class CartComponent {
       });
       return;
     }
+    if (this.cart.data.email.trim()) {
+      if (!this.validateEmail(this.cart.data.email.trim())) {
+        this.snackbar.open('Email-ul e greșit', '', {
+          duration: 3000,
+        });
+        return;
+      }
+    }
     this.loadingService.setLoading(true);
     this.cartService.finishCommand(this.cart).subscribe(() => {
       this.step = 2;
       this.loadingService.setLoading(false);
     });
+  }
+
+  validateEmail(email: string) {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
   }
 }
