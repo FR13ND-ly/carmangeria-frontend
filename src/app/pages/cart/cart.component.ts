@@ -62,7 +62,7 @@ export class CartComponent {
       });
       return;
     }
-    if (!this.cart.data.email.trim()) {
+    if (this.cart.data.email.trim()) {
       if (!this.validateEmail(this.cart.data.email.trim())) {
         this.snackbar.open('Email-ul e greșit', '', {
           duration: 3000,
