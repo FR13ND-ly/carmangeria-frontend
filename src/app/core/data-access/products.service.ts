@@ -28,7 +28,19 @@ export class ProductsService {
         collection.push(el);
       }
     });
-    return Array.from(map, ([name, products]) => ({ name, products }));
+    let res = [{}, {}, {}];
+    Array.from(map, ([name, products]) => ({ name, products })).forEach(
+      (arr: any) => {
+        if (arr.name == 'Produse afumate') {
+          res[0] = arr;
+        } else if (arr.name == 'Produse proaspete') {
+          res[1] = arr;
+        } else if (arr.name == 'Platouri') {
+          res[2] = arr;
+        }
+      }
+    );
+    return res;
   }
 
   getProductsById(data: any) {
